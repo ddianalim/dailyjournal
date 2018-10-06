@@ -3,11 +3,17 @@ const User = require('../models/user');
 
 const router = express.Router();
 
+// set layout variables
+router.use(function(req, res, next) {
+  res.locals.title = "Daily Journal";
+  res.locals.currentUserId = req.session.userId;
+
+  next();
+});
+
 // home page
 router.get('/', (req, res, next) => {
-  const currentUserId = req.session.userId;
-
-  res.render('index', { title: 'dailyjournal', currentUserId: currentUserId });
+  res.render('index');
 });
 
 // login
