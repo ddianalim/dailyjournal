@@ -5,7 +5,9 @@ const router = express.Router();
 
 // home page
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'MakeReddit' });
+  const currentUserId = req.session.userId;
+
+  res.render('index', { title: 'dailyjournal', currentUserId: currentUserId });
 });
 
 // login
