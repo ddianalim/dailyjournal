@@ -1,3 +1,7 @@
+if (!process.env.PORT) {
+  require('dotenv').config();
+}
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -41,7 +45,8 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 const mongoose = require('mongoose');
-const mongoURI = '()';
+const mongoURI = 'mongodb://' + process.env.MONGODB_ADMIN + ':' + process.env.MONGODB_PASSWORD + '@ds223653.mlab.com:23653/' + process.env.MONGODB_DATABASE;
+
 
 mongoose.connect(mongoURI)
 mongoose.Promise = global.Promise;
