@@ -11,6 +11,7 @@ const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var daysRouter = require('./routes/days');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(session({ secret: 'secret-unique-code', cookie: { maxAge: 3600000 }, res
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/days', daysRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
