@@ -31,7 +31,13 @@ router.post('/:id', auth.requireLogin, (req, res, next) => {
 
 // Days create
 router.post('/', auth.requireLogin, (req, res, next) => {
-  // TODO
+  let day = new Day(req.body);
+
+  day.save(function(err, day) {
+    if(err) { console.error(err) };
+
+    return res.redirect('/days');
+  });
 });
 
 module.exports = router;
