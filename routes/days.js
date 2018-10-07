@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 
 // Days new
 router.get('/new', auth.requireLogin, (req, res, next) => {
-  // TODO
+  res.render('days/new');
 });
 
 // Days show
