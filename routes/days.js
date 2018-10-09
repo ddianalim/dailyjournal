@@ -6,7 +6,7 @@ const Day = require('../models/day');
 
 // Days index
 router.get('/', (req, res, next) => {
-  Day.find({}, 'topic', function(err, days) {
+  Day.find({}, 'description', function(err, days) {
     if(err) {
       console.error(err);
     } else {
