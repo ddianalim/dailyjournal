@@ -26,16 +26,25 @@ router.get('/:id', auth.requireLogin, (req, res, next) => {
     if(err) { console.error(err) };
 
     res.render('days/show', { day: day });
-  });});
+  });
+});
 
 // Days edit
 router.get('/:id/edit', auth.requireLogin, (req, res, next) => {
-  // TODO
+  Day.findById(req.params.id, function(err, day) {
+    if(err) { console.error(err) };
+
+    res.render('days/edit', { day: day });
+  });
 });
 
 // Days update
 router.post('/:id', auth.requireLogin, (req, res, next) => {
-  // TODO
+  Day.findByIdAndUpdate(req.params.id, req.body, function(err, day) {
+    if(err) { console.error(err) };
+
+    res.redirect('/days/' + req.params.id);
+  });
 });
 
 // Days create
