@@ -22,8 +22,11 @@ router.get('/new', auth.requireLogin, (req, res, next) => {
 
 // Days show
 router.get('/:id', auth.requireLogin, (req, res, next) => {
-  // TODO
-});
+  Day.findById(req.params.id, function(err, day) {
+    if(err) { console.error(err) };
+
+    res.render('days/show', { day: day });
+  });});
 
 // Days edit
 router.get('/:id/edit', auth.requireLogin, (req, res, next) => {
