@@ -6,7 +6,13 @@ const Day = require('../models/day');
 
 // Days index
 router.get('/', (req, res, next) => {
-  // TODO
+  Day.find({}, 'topic', function(err, days) {
+    if(err) {
+      console.error(err);
+    } else {
+      res.render('days/index', { days: days });
+    }
+  });
 });
 
 // Days new
