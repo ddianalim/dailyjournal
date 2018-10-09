@@ -1,0 +1,14 @@
+<div>
+  Days Index
+</div>
+
+<div>
+  <ul>
+    {{#each days as |day|}}
+      <li>
+        <a href="/days/{{day.id}}">{{day.description}}</a>
+        <a href="/days/{{day.id}}/edit">edit</a>
+      </li>
+    {{/each}}
+  </ul>
+<div>
