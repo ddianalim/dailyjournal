@@ -3,12 +3,11 @@
 </div>
 
 <div>
-  <ul>
     {{#each days as |day|}}
-      <li>
+      <div class="card" style="width: 18rem;">
         <a href="/days/{{day.id}}">{{day.description}}</a>
         <a href="/days/{{day.id}}/edit">edit</a>
-      </li>
+      </div>
     {{/each}}
   </ul>
 <div>
