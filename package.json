@@ -17,5 +17,22 @@
     "mongodb": "^3.1.6",
     "mongoose": "^5.3.1",
     "morgan": "~1.9.0"
-  }
+  },
+  "description": "This is dailyjournal",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dianalimnos/dailyjournal.git"
+  },
+  "keywords": [
+    "heroku",
+    "app"
+  ],
+  "author": "diana-lim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dianalimnos/dailyjournal/issues"
+  },
+  "homepage": "https://github.com/dianalimnos/dailyjournal#readme"
 }
